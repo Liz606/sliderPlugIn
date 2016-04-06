@@ -1,0 +1,89 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta  charset=utf-8 />
+<title>无限滚动条</title>
+<style>
+body,div,p,ul,li{
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+}
+#slider{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+   
+}
+
+#sliderBox{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0;
+    position: absolute;
+}
+
+#sliderBox>li {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    float: none; 
+    display: block; 
+    position: absolute; 
+    z-index: 0;
+    top: 0px; 
+    left: 0px;
+}
+#point{
+    position: absolute;
+    display: inline-block;
+    bottom: 25px;
+    left: 50%;
+    -webkit-transform: translateX(-56%);
+    transform: translateX(-56%);
+    font-size: 60px;
+    z-index: 1000;
+}
+
+#point span{
+    float: left;
+    height: 8px;
+    width: 8px;
+    border: 2px solid rgb(68, 188, 187);
+    border-radius: 5px;
+    background: #c0c0c0;
+    margin-left: 10px;
+}
+
+#point .on{
+    background: #ffffff;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="slider">
+        <ul id="sliderBox">
+			<li style="background-image:url(s2.jpg);"></li>
+			<li style="background-image:url(s3.jpg);"></li>
+			<li style="background-image:url(s4.jpg);"></li>
+            <li style="background-image:url(s1.jpg);"></li>
+		</ul>
+	</div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="slider.js"></script>
+<script>
+window.onload = function() {
+	var constIndex=4;
+    var sliderBox = '#sliderBox';
+    init (sliderBox,constIndex,true);
+}
+</script>
+</html>
