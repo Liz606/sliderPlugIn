@@ -76,7 +76,7 @@
     }
     //pageMove
     function pageMove(e){
-        e.preventDefault();
+        //e.preventDefault();
     }
     //pageStart
     function pageStart(e){
